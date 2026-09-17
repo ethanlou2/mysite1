@@ -11,7 +11,6 @@ The Java version used in Cloud Manager pipelines is defined in the `.cloudmanage
 ## Modules
 
 - `core`: OSGi bundle. Contains the Java code for backend services, models, and business logic. Uses OSGi for dependency injection, Sling models for exposing content to Sling scripts and JUnit for unit testing.
-- `dispatcher`: Contains the cloud-optimized Dispatcher configuration, including caching and security settings. Uses immutable files that are validated by the Dispatcher SDK. 
 - `ui.apps`: FileVault content package. Contains the application code, including components, templates, client libraries, and content structure. Uses HTL as the scripting engine.
 - `ui.apps.structure`: FileVault content package. Empty module that defines the structure of the repository content.
 - `ui.config`: FileVault content package. Contains OSGi configurations for the application.
@@ -31,7 +30,8 @@ The project uses Maven as the build tool. The following commands are commonly us
 - build and deploy a single OSGi bundle: `mvn clean install -pl <module> -PautoInstallBundle`
 - build frontend only: `cd ui.frontend && npm run build`
 - develop frontend locally: `cd ui.frontend && npm start`
-- validate Dispatcher configuration: `cd dispatcher && ./bin/validate.sh src`
+
+Dispatcher and CDN configuration no longer live in this repo — they are owned by the platform team in `platform/dispatcher-config` and `platform/cdn-config`, pulled into the `program-shell` aggregator repo as submodules.
 
 ## Important resources
 
