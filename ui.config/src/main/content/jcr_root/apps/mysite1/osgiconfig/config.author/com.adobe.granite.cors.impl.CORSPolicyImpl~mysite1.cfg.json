@@ -1,5 +1,5 @@
 {
-  "alloworigin": ["http://localhost:3000"],
+  "alloworigin": ["http://localhost:3003"],
   "allowedpaths": ["/(content|conf)/mysite1.*"],
   "supportedheaders": [
     "Authorization",
